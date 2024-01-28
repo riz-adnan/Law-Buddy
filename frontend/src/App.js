@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
   const initial = async () => {
     try {
-      const response = await axios.get('https://law-buddy.onrender.com/get_ipc');
+      const response = await axios.get('http://localhost:5000/get_ipc');
       setResult(response.data.result);
      
     } catch (error) {
@@ -24,7 +24,7 @@ function App() {
   const handleProcessQuery = async () => {
     try {
       console.log('hi');
-      const response = await axios.post('https://law-buddy.onrender.com/process_query', {
+      const response = await axios.post('http://localhost:5000/process_query', {
         question: query,
       });
       flag=true;
